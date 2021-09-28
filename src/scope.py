@@ -16,14 +16,14 @@ def read_file(file_path):
     return data
 
 class EntropyImage:
-    def __init__(self, bytes_per_row, rows_count, w=PIXELS_PER_BYTE, h=PIXELS_PER_BYTE):
+    def __init__(self, bytes_per_row, rows_count, pixel_width=PIXELS_PER_BYTE, pixel_height=PIXELS_PER_BYTE):
         self.current_x = 0
         self.current_y = 0
         self.max_bytes_per_row = bytes_per_row
         self.max_rows_count = rows_count
         self.canvas = EntropyImage.new_image(bytes_per_row, rows_count)
-        self.rect_width = PIXELS_PER_BYTE
-        self.rect_height = PIXELS_PER_BYTE
+        self.rect_width = pixel_width
+        self.rect_height = pixel_height
 
     def byte_to_hue(byte):
         return int(100*float(byte)/255.)
